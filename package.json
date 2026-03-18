@@ -1,0 +1,27 @@
+{
+  "name": "ijs-2026-fullstackday-arcitecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "slidev slides/slides.md",
+    "build": "slidev build slides/slides.md",
+    "export": "slidev export slides/slides.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannahebert/ijs-2026-fullstackday-arcitecture.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hannahebert/ijs-2026-fullstackday-arcitecture/issues"
+  },
+  "homepage": "https://github.com/hannahebert/ijs-2026-fullstackday-arcitecture#readme",
+  "devDependencies": {
+    "@slidev/cli": "^52.14.1",
+    "@slidev/theme-default": "^0.25.0"
+  }
+}

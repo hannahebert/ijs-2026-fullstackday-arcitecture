@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Slidev build output
+dist/
+.output/
+
+# Cache
+.cache/
+.vite-inspect/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

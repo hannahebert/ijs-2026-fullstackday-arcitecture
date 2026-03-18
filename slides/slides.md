@@ -55,12 +55,13 @@ Hannah Ebert & Florian Sowade
 <v-clicks>
 
 1. The Promise vs. The Reality
-2. The God Component
+2. The God Component & Component Architecture
 3. State Management Gone Wrong
-4. The useEffect / Lifecycle Spaghetti
+4. useEffect / Lifecycle Spaghetti
 5. Error Handling & Loading States
-6. Over-Engineering
-7. Wrap-Up & Takeaways
+6. Forms
+7. Over-Engineering
+8. Wrap-Up & Takeaways
 
 </v-clicks>
 
@@ -89,13 +90,22 @@ _Hannah & Florian_
 # ...Then Reality Hits
 
 - Feature pressure, deadlines, team changes
+- The broken window effect: starts clean, then nobody cares
 - The gap between diagrams and production code
+
+---
+
+# Menti: Who Are You?
+
+<!-- TODO: Menti QR code / link -->
+<!-- Poll: Who does Angular? Who does React? Who does both? -->
+<!-- Use results to calibrate depth per framework in the rest of the talk -->
 
 ---
 layout: section
 ---
 
-# Part 2: The God Component
+# Part 2: The God Component & Component Architecture
 
 ---
 
@@ -122,10 +132,46 @@ _Florian_
 - When to split vs. when it's fine
 
 ---
+
+# Prop Drilling & Prop Explosion
+
+- Passing props through 5 layers just to reach a leaf
+- The 45-props Button component
+- When to reach for context / DI instead
+
+<!-- TODO: examples in both frameworks -->
+
+---
+
+# Business Logic in Templates
+
+- Calculations and conditions directly in JSX / Angular templates
+- Why it's hard to test and easy to miss
+- Extract into hooks / services / pipes
+
+<!-- TODO: examples in both frameworks -->
+
+---
 layout: section
 ---
 
 # Part 3: State Management Gone Wrong
+
+---
+
+# State Management: You Already Have It
+
+- You're doing state management whether you plan for it or not
+- Better to be intentional than to let it happen by accident
+- The Facebook Messages bug: same state duplicated across the app, going out of sync
+
+---
+
+# Derived State Is a Trap
+
+- Storing values that could be computed
+- Two sources of truth that inevitably diverge
+- Derive, don't duplicate
 
 ---
 
@@ -172,6 +218,7 @@ _Hannah_
 
 - ngOnChanges / ngDoCheck abuse
 - Manual subscriptions & teardown nightmares
+- Zombie subscriptions
 - The shift to Signals and computed()
 
 <!-- TODO: code examples -->
@@ -184,7 +231,8 @@ _Florian_
 
 - Effects that should be event handlers
 - Missing/wrong dependency arrays
-- Cascading effects
+- Cascading effects / circular state updates
+- Zombie setState after unmount
 
 <!-- TODO: code examples -->
 
@@ -235,7 +283,23 @@ _Florian_
 layout: section
 ---
 
-# Part 6: Over-Engineering
+# Part 6: Forms
+
+---
+
+# Controlled vs. Uncontrolled – Pick One
+
+- Mixing controlled and uncontrolled inputs in the same form
+- React: useState for some fields, refs for others, FormData for a third
+- Angular: mixing template-driven and reactive forms in one component
+
+<!-- TODO: examples of the mismatch and a clean approach -->
+
+---
+layout: section
+---
+
+# Part 7: Over-Engineering
 
 ---
 
@@ -272,7 +336,7 @@ _Florian_
 layout: section
 ---
 
-# Part 7: Wrap-Up & Takeaways
+# Part 8: Wrap-Up & Takeaways
 
 _Hannah & Florian_
 

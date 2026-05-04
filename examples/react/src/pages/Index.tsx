@@ -7,6 +7,12 @@ const examples = [
     blurb: "The 2,000-line component, prop drilling, business logic in JSX.",
   },
   {
+    path: "/god-component/refactored",
+    title: "God Component (refactored)",
+    blurb:
+      "Same example after extracting one hook and one component. Still imperfect — by design.",
+  },
+  {
     path: "/state-management",
     title: "State Management",
     blurb: "When state goes wrong: lifted too high, scattered too wide.",

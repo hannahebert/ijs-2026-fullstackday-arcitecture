@@ -1,6 +1,7 @@
 import { Routes, Route, Outlet, Link } from "react-router";
 import Index from "./pages/Index";
 import GodComponent from "./pages/GodComponent";
+import GodComponentRefactored from "./pages/GodComponentRefactored";
 import StateManagement from "./pages/StateManagement";
 import EffectsLifecycle from "./pages/EffectsLifecycle";
 import ErrorHandling from "./pages/ErrorHandling";
@@ -29,6 +30,10 @@ export default function App() {
       <Route element={<Layout />}>
         <Route index element={<Index />} />
         <Route path="god-component" element={<GodComponent />} />
+        <Route
+          path="god-component/refactored"
+          element={<GodComponentRefactored />}
+        />
         <Route path="state-management" element={<StateManagement />} />
         <Route path="effects-lifecycle" element={<EffectsLifecycle />} />
         <Route path="error-handling" element={<ErrorHandling />} />

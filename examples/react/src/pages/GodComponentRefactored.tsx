@@ -1,24 +1,15 @@
 import { useEffect, useState } from "react";
+import type { User } from "./god-component/types";
+import { useFilteredList } from "./god-component/useFilteredList";
+import UserRow from "./god-component/UserRow";
 import "./god-component/god-component.css";
 
-type User = {
-  id: string;
-  name: string;
-  email: string;
-  role: "admin" | "editor" | "viewer";
-  active: boolean;
-  lastLoginAt: string | null;
-};
-
-type RoleFilter = "all" | "admin" | "editor" | "viewer";
-
-export default function GodComponent() {
+export default function GodComponentRefactored() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const [search, setSearch] = useState("");
-  const [roleFilter, setRoleFilter] = useState<RoleFilter>("all");
+  const { filters, setFilter, filtered } = useFilteredList(users);
 
   const [selected, setSelected] = useState<Set<string>>(new Set());
 
@@ -46,18 +37,6 @@ export default function GodComponent() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
-
-  const filtered = users.filter((u) => {
-    if (roleFilter !== "all" && u.role !== roleFilter) return false;
-    if (
-      search &&
-      !u.name.toLowerCase().includes(search.toLowerCase()) &&
-      !u.email.toLowerCase().includes(search.toLowerCase())
-    ) {
-      return false;
-    }
-    return true;
-  });
 
   function toggleSelected(id: string) {
     const next = new Set(selected);
@@ -97,12 +76,14 @@ export default function GodComponent() {
         <input
           type="search"
           placeholder="Search by name or email..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          value={filters.search}
+          onChange={(e) => setFilter("search", e.target.value)}
         />
         <select
-          value={roleFilter}
-          onChange={(e) => setRoleFilter(e.target.value as RoleFilter)}
+          value={filters.role}
+          onChange={(e) =>
+            setFilter("role", e.target.value as typeof filters.role)
+          }
         >
           <option value="all">All roles</option>
           <option value="admin">Admin</option>
@@ -144,89 +125,16 @@ export default function GodComponent() {
         </thead>
         <tbody>
           {filtered.map((u) => (
-            <tr key={u.id}>
-              <td>
-                <input
-                  type="checkbox"
-                  checked={selected.has(u.id)}
-                  onChange={() => toggleSelected(u.id)}
-                />
-              </td>
-              <td>
-                <div className="user-cell">
-                  <div className="avatar">
-                    {u.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")
-                      .slice(0, 2)
-                      .toUpperCase()}
-                  </div>
-                  <div>
-                    <div className="user-name">{u.name}</div>
-                    <div className="user-email">{u.email}</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <span
-                  className="role-badge"
-                  style={{
-                    background:
-                      u.role === "admin"
-                        ? "#fde2e2"
-                        : u.role === "editor"
-                          ? "#fff4d4"
-                          : "#e2ecfd",
-                    color:
-                      u.role === "admin"
-                        ? "#a4262c"
-                        : u.role === "editor"
-                          ? "#8a6d1a"
-                          : "#1f4ea8",
-                  }}
-                >
-                  {u.role}
-                </span>
-              </td>
-              <td>
-                {!u.active ? (
-                  <span className="pill pill-inactive">Inactive</span>
-                ) : !u.lastLoginAt ? (
-                  <span className="pill pill-pending">Never logged in</span>
-                ) : new Date(u.lastLoginAt).getTime() <
-                  Date.now() - 30 * 24 * 60 * 60 * 1000 ? (
-                  <span className="pill pill-stale">Stale</span>
-                ) : (
-                  <span className="pill pill-active">Active</span>
-                )}
-              </td>
-              <td>
-                {u.lastLoginAt
-                  ? (() => {
-                      const ms =
-                        Date.now() - new Date(u.lastLoginAt).getTime();
-                      const min = Math.floor(ms / 60000);
-                      if (min < 1) return "just now";
-                      if (min < 60) return min + "m ago";
-                      const hr = Math.floor(min / 60);
-                      if (hr < 24) return hr + "h ago";
-                      const d = Math.floor(hr / 24);
-                      if (d < 30) return d + "d ago";
-                      const mo = Math.floor(d / 30);
-                      return mo + "mo ago";
-                    })()
-                  : "—"}
-              </td>
-              <td className="row-actions">
-                <button onClick={() => openEdit(u)}>Edit</button>
-                <button
-                  onClick={() => alert("Pretend we deactivated " + u.name)}
-                >
-                  Deactivate
-                </button>
-              </td>
-            </tr>
+            <UserRow
+              key={u.id}
+              user={u}
+              selected={selected.has(u.id)}
+              onToggleSelected={toggleSelected}
+              onEdit={openEdit}
+              onDeactivate={(user) =>
+                alert("Pretend we deactivated " + user.name)
+              }
+            />
           ))}
         </tbody>
       </table>

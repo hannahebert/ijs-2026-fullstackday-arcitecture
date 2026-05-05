@@ -42,7 +42,7 @@ export default function GodComponent() {
         setError(e.message);
         setLoading(false);
       });
-  }, []);
+  }, [setLoading]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;

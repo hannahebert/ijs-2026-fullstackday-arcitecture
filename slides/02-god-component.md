@@ -4,46 +4,47 @@ layout: section
 
 # Part 2: The God Component & Component Architecture
 
----
-
-# Angular: The Kitchen-Sink Component
-
-_Hannah_
-
-<!-- TODO: code example of a bloated Angular component -->
+Why your biggest component keeps getting bigger
 
 ---
+layout: statement
+---
 
-# React: The 2,000-Line Component
-
-_Florian_
-
-<!-- TODO: code example of a bloated React component -->
+# Demo time
 
 ---
 
-# How to Spot It & How to Fix It
+# When to suspect a God Component
 
-- Signs you have a God Component
-- Extraction strategies
-- When to split vs. when it's fine
-
----
-
-# Prop Drilling & Prop Explosion
-
-- Passing props through 5 layers just to reach a leaf
-- The 45-props Button component
-- When to reach for context / DI instead
-
-<!-- TODO: examples in both frameworks -->
+- The line count keeps creeping up
+- It shows up in nearly every PR
+- More pieces of state than the UI seems to need
+- It's the file where all the merge conflicts land
 
 ---
 
-# Business Logic in Templates
+# Where to cut first
 
-- Calculations and conditions directly in JSX / Angular templates
-- Why it's hard to test and easy to miss
-- Extract into hooks / services / pipes
+- Pull out what you can _see_ (rows, cards, panels)
+- Then what _behaves_ together (filters, forms)
+- Save the data/fetch layer for later — it's the hardest seam
 
-<!-- TODO: examples in both frameworks -->
+---
+
+# When to leave it alone
+
+- Long isn't bad if it's coherent
+- A child with 10 props is a worse smell
+- Don't refactor for use cases that don't exist yet
+
+---
+
+# Business logic in templates
+
+If a calculation, decision, or format rule lives _only_ inside a render block, you can't:
+
+- **test it** without rendering the component
+- **grep for it** when the rule changes
+- **reuse it** anywhere else
+
+Lift it out. Plain function, util, pipe, hook — anything outside the markup.

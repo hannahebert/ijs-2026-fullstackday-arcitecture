@@ -14,8 +14,6 @@ Hannah Ebert & Florian Sowade
 
 **Software Architect · adesso SE**
 
-<br/>
-
 - Fokus auf Softwarearchitektur & Qualität
 - Fullstack-Entwicklung & Developer Experience
 - AI-gestützte Entwicklung
@@ -28,7 +26,15 @@ Hannah Ebert & Florian Sowade
 
 # Florian Sowade
 
-<!-- TODO: bio -->
+**Co-Founder · Suora**
+
+- Building and maintaining frontend applications since 2007
+- Frontend architecture & React
+- Agile processes & team collaboration
+
+<br/>
+
+> "The best architecture is the one your team can change."
 
 ---
 

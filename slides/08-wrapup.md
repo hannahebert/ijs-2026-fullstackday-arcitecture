@@ -17,7 +17,7 @@ _Hannah & Florian_
 5. Architecture should serve the team, not the other way around
 
 ---
-layout: center
+layout: statement
 ---
 
 # Thank You!

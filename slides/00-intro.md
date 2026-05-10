@@ -14,13 +14,13 @@ Hannah Ebert & Florian Sowade
 
 **Software Architect · adesso SE**
 
-- Fokus auf Softwarearchitektur & Qualität
-- Fullstack-Entwicklung & Developer Experience
-- AI-gestützte Entwicklung
+- Focus on software architecture & quality
+- Fullstack development & developer experience
+- AI-assisted development
 
 <br/>
 
-> „Erst verstehen. Dann automatisieren."
+> "Understand first. Automate later."
 
 ---
 

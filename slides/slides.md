@@ -14,9 +14,6 @@ mdc: true
 colorSchema: light
 themeConfig:
   primary: '#2D6CC7'
----
-
----
 src: ./00-intro.md
 ---
 

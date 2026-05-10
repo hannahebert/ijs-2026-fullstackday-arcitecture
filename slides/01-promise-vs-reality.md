@@ -2,19 +2,24 @@
 layout: section
 ---
 
-# Part 1: The Promise vs. The Reality
+# Part 1: Promise vs. Reality
 
 ---
-layout: statement
+layout: center
+class: text-center
 ---
 
-# Every legacy codebase started as a greenfield project.
+# Promise 1
 
-<!--
-- Normalize: not "those teams", everyone ends up here
-- Day 1 clean → 2 years, 30 devs, "temporary" hacks
-- Default trajectory, not rare outcome
--->
+**"The next project will be perfect —**  
+**if I just make the perfect decisions upfront!"**
+
+<v-click>
+<div class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded border border-red-400 bg-red-50 text-red-700 text-sm font-large">
+  <span class="w-4 h-4 rounded-full bg-red-500 inline-block" />
+  Reality: It won't.
+</div>
+</v-click>
 
 ---
 layout: statement
@@ -25,80 +30,54 @@ layout: statement
 <!--
 - Causes are structural: pressure, deadlines, turnover, frameworks shifting
 - Broken windows = system property, not character flaw
-- Warm tone, mean it — not handwave absolution
 -->
 
 ---
-layout: statement
+layout: center
+class: text-center
 ---
 
-# You can get out.
 
-<!--
-- Mess is reversible — not terminal
-- "Clean" = verb, ongoing discipline
-- Small steps compound, no rewrite needed
--->
+> Good architecture is not a decision you make once —  
+> it's a **discipline you practice continuously**.
+
+<v-click>
+
+> Even a perfect house becomes a ruin  
+> if you **stop maintaining it**.
+
+</v-click>
 
 ---
 layout: statement
 ---
 
 # But wait —
-# my AI writes the code.
+# my AI writes and maintines the code.
 
-<div class="pt-8 text-gray-400">So why are you here?</div>
+<div class="pt-8 text-gray-400">So why are we here?</div>
 
 <!--
 - Hands up: who's using Cursor / Copilot / Claude daily?
 -->
 
+
 ---
 layout: statement
 ---
 
-# AI doesn't decide architecture.
-# It amplifies yours.
+Promise 2: I don't have to think about the arcitecture of my projct - AI will do that for me
 
----
+**Reality: You are still responsible**
 
-# Same sins. New speed.
-
-<v-clicks>
-
-| Sin               | AI makes it worse           | Skill to keep         |
-| ----------------- | --------------------------- | --------------------- |
-| God Component     | Lands in the biggest file   | Define seams first    |
-| State             | Sees the snippet, not store | Explicit ownership    |
-| useEffect         | Mirrors patterns nearby     | Derive, don't sync    |
-| Errors            | Skips the edges             | Errors as contract    |
-| Over-engineering  | Enterprise for a TODO app   | Match complexity      |
-
-</v-clicks>
-
-<style>
-.slidev-layout table {
-  font-size: 1.4rem !important;
-  margin-top: 0.5rem !important;
-}
-.slidev-layout th,
-.slidev-layout td {
-  padding: 0.4rem 0.8rem !important;
-  line-height: 1.3 !important;
-}
-.slidev-layout h1 {
-  margin-bottom: 1rem !important;
-}
-</style>
 
 ---
 layout: statement
 ---
 
 # The new superpower:
-# knowing when the output is wrong — and why.
+# Knowing how to help AI to build an maintain a good architecture
 
-<div class="pt-6 text-gray-400">…which is the rest of this talk.</div>
 
 ---
 

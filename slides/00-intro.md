@@ -42,7 +42,7 @@ Hannah Ebert & Florian Sowade
 
 <v-clicks>
 
-1. The Promise vs. The Reality
+1. Promise vs. Reality
 2. The God Component & Component Architecture
 3. State Management Gone Wrong
 4. Effects & Lifecycle Chaos

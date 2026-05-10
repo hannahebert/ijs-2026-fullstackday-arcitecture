@@ -18,5 +18,9 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
+    rules: {
+      // Disabled so audience can spot the anti-pattern themselves during the live refactor.
+      "react-hooks/set-state-in-effect": "off",
+    },
   },
 ]);

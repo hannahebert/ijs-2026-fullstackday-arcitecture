@@ -1,0 +1,190 @@
+{
+  "categories": [
+    { "id": 1, "name": "Clothing", "slug": "clothing" },
+    { "id": 2, "name": "Electronics", "slug": "electronics" },
+    { "id": 3, "name": "Books", "slug": "books" },
+    { "id": 4, "name": "Home", "slug": "home" }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Cotton T-Shirt",
+      "description": "A soft, breathable everyday tee in midweight cotton. Pre-shrunk, machine washable.",
+      "price": 19.99,
+      "categoryId": 1,
+      "stock": 45,
+      "imageSeed": "cotton-tee"
+    },
+    {
+      "id": 2,
+      "name": "Wool Sweater",
+      "description": "Merino wool crewneck with a relaxed fit. Warm enough for autumn, light enough for indoors.",
+      "price": 89.0,
+      "categoryId": 1,
+      "stock": 12,
+      "imageSeed": "wool-sweater"
+    },
+    {
+      "id": 3,
+      "name": "Denim Jacket",
+      "description": "Classic mid-wash denim with a tailored cut. Two chest pockets, button cuffs.",
+      "price": 129.0,
+      "categoryId": 1,
+      "stock": 8,
+      "imageSeed": "denim-jacket"
+    },
+    {
+      "id": 4,
+      "name": "Running Shorts",
+      "description": "Lightweight ripstop shell with a soft inner brief. Zip pocket for keys.",
+      "price": 34.5,
+      "categoryId": 1,
+      "stock": 0,
+      "imageSeed": "running-shorts"
+    },
+    {
+      "id": 5,
+      "name": "Leather Belt",
+      "description": "Full-grain leather, brass buckle. Develops a patina with age.",
+      "price": 42.0,
+      "categoryId": 1,
+      "stock": 23,
+      "imageSeed": "leather-belt"
+    },
+    {
+      "id": 6,
+      "name": "Wireless Headphones",
+      "description": "Over-ear active noise cancellation, 30-hour battery, USB-C charging.",
+      "price": 159.0,
+      "categoryId": 2,
+      "stock": 18,
+      "imageSeed": "wireless-headphones"
+    },
+    {
+      "id": 7,
+      "name": "Mechanical Keyboard",
+      "description": "75% layout, hot-swappable switches, PBT keycaps. Comes with tactile browns.",
+      "price": 129.0,
+      "categoryId": 2,
+      "stock": 7,
+      "imageSeed": "mech-keyboard"
+    },
+    {
+      "id": 8,
+      "name": "USB-C Hub",
+      "description": "7-in-1: HDMI, two USB-A, USB-C PD passthrough, SD and microSD readers, gigabit ethernet.",
+      "price": 39.99,
+      "categoryId": 2,
+      "stock": 50,
+      "imageSeed": "usbc-hub"
+    },
+    {
+      "id": 9,
+      "name": "Webcam HD",
+      "description": "1080p at 60fps, dual-microphone array, magnetic mount. UVC compliant — no drivers needed.",
+      "price": 79.0,
+      "categoryId": 2,
+      "stock": 3,
+      "imageSeed": "webcam-hd"
+    },
+    {
+      "id": 10,
+      "name": "Bluetooth Speaker",
+      "description": "Portable, IP67 waterproof, 12-hour battery. Pairs two units for stereo.",
+      "price": 89.0,
+      "categoryId": 2,
+      "stock": 0,
+      "imageSeed": "bt-speaker"
+    },
+    {
+      "id": 11,
+      "name": "The Pragmatic Programmer",
+      "description": "Hunt and Thomas. The 20th-anniversary edition with revised tips and modern examples.",
+      "price": 29.99,
+      "categoryId": 3,
+      "stock": 30,
+      "imageSeed": "pragprog"
+    },
+    {
+      "id": 12,
+      "name": "Refactoring (2nd ed.)",
+      "description": "Martin Fowler's catalog of refactoring techniques, updated with JavaScript examples.",
+      "price": 44.99,
+      "categoryId": 3,
+      "stock": 15,
+      "imageSeed": "refactoring"
+    },
+    {
+      "id": 13,
+      "name": "Domain-Driven Design",
+      "description": "Eric Evans' foundational text on tackling complexity in the heart of software.",
+      "price": 52.0,
+      "categoryId": 3,
+      "stock": 9,
+      "imageSeed": "ddd-book"
+    },
+    {
+      "id": 14,
+      "name": "A Philosophy of Software Design",
+      "description": "John Ousterhout on managing complexity through deep modules and a tighter style of class decomposition.",
+      "price": 34.99,
+      "categoryId": 3,
+      "stock": 22,
+      "imageSeed": "philosophy-sw-design"
+    },
+    {
+      "id": 15,
+      "name": "You Don't Know JS Yet",
+      "description": "Kyle Simpson's deep dive into the JavaScript language. Get Started volume.",
+      "price": 24.99,
+      "categoryId": 3,
+      "stock": 0,
+      "imageSeed": "ydkjs"
+    },
+    {
+      "id": 16,
+      "name": "Ceramic Coffee Mug",
+      "description": "12oz stoneware, dishwasher and microwave safe. Matte glaze, comfortable handle.",
+      "price": 14.0,
+      "categoryId": 4,
+      "stock": 60,
+      "imageSeed": "ceramic-mug"
+    },
+    {
+      "id": 17,
+      "name": "Throw Blanket",
+      "description": "Chunky knit, recycled cotton blend. 50x60 inches. Machine washable cold.",
+      "price": 49.0,
+      "categoryId": 4,
+      "stock": 11,
+      "imageSeed": "throw-blanket"
+    },
+    {
+      "id": 18,
+      "name": "Desk Lamp",
+      "description": "Adjustable arm, dimmable LED, three color temperatures. USB charging port in the base.",
+      "price": 69.0,
+      "categoryId": 4,
+      "stock": 6,
+      "imageSeed": "desk-lamp"
+    },
+    {
+      "id": 19,
+      "name": "Wall Clock",
+      "description": "12-inch silent quartz movement, brushed aluminum frame, white face with black hands.",
+      "price": 39.0,
+      "categoryId": 4,
+      "stock": 18,
+      "imageSeed": "wall-clock"
+    },
+    {
+      "id": 20,
+      "name": "Plant Pot Set",
+      "description": "Three terracotta pots in graduated sizes, with matching saucers. Drainage holes pre-drilled.",
+      "price": 24.5,
+      "categoryId": 4,
+      "stock": 14,
+      "imageSeed": "plant-pots"
+    }
+  ]
+}

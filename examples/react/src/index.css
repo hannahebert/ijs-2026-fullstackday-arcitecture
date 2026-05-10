@@ -49,32 +49,20 @@ a:hover {
   font-size: 0.9rem;
 }
 
+.cart-badge {
+  margin-left: auto;
+  padding: 0.4rem 0.8rem;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.cart-badge:hover {
+  background: #e8e8e8;
+  text-decoration: none;
+}
+
 h1 {
   font-size: 2rem;
   margin-top: 0;
-}
-
-.todo {
-  color: #888;
-  font-style: italic;
-}
-
-.example-list {
-  list-style: none;
-  padding: 0;
-}
-
-.example-list li {
-  margin-bottom: 1.5rem;
-}
-
-.example-list a {
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.example-list p {
-  margin: 0.25rem 0 0;
-  color: #666;
-  font-size: 0.95rem;
 }

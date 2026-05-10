@@ -1,0 +1,12 @@
+{
+  "name": "server",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Mock backend for the React mini-shop example (json-server with per-request _delay/_error)",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

@@ -1,0 +1,11 @@
+.thanks-page {
+  text-align: center;
+  padding: 4rem 0;
+}
+.thanks-page h1 {
+  margin-bottom: 1rem;
+}
+.thanks-page p {
+  margin-bottom: 2rem;
+  color: #666;
+}

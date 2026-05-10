@@ -8,8 +8,6 @@ layout: section
 
 # Angular: Lifecycle Hook Overload
 
-_Hannah_
-
 - ngOnChanges / ngDoCheck abuse
 - Manual subscriptions & teardown nightmares
 - Zombie subscriptions
@@ -20,8 +18,6 @@ _Hannah_
 ---
 
 # React: useEffect Hell
-
-_Florian_
 
 - Effects that should be event handlers
 - Missing/wrong dependency arrays

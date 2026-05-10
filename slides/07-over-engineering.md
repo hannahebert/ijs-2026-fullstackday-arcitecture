@@ -16,15 +16,11 @@ layout: section
 
 # Angular: Layers of Indirection
 
-_Hannah_
-
 <!-- TODO: examples -->
 
 ---
 
 # React: Wrapper Components & HOC Pyramids
-
-_Florian_
 
 <!-- TODO: examples -->
 

@@ -15,15 +15,11 @@ layout: section
 
 # Angular: Error Interceptors & RxJS Error Handling
 
-_Hannah_
-
 <!-- TODO: examples -->
 
 ---
 
 # React: Error Boundaries & Suspense
-
-_Florian_
 
 <!-- TODO: examples -->
 

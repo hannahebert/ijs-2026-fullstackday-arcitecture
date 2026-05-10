@@ -22,6 +22,10 @@ Hannah Ebert & Florian Sowade
 
 > "Understand first. Automate later."
 
+<style scoped>
+.slidev-layout { place-content: start; text-align: left; }
+</style>
+
 ---
 
 # Florian Sowade
@@ -36,22 +40,9 @@ Hannah Ebert & Florian Sowade
 
 > "The best architecture is the one your team can change."
 
----
-
-# Agenda
-
-<v-clicks>
-
-1. Promise vs. Reality
-2. The God Component & Component Architecture
-3. State Management Gone Wrong
-4. Effects & Lifecycle Chaos
-5. Error Handling & Loading States
-6. Forms
-7. Over-Engineering
-8. Wrap-Up & Takeaways
-
-</v-clicks>
+<style scoped>
+.slidev-layout { place-content: start; text-align: left; }
+</style>
 
 <style>
 ol {

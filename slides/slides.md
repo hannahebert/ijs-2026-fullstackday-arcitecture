@@ -17,9 +17,7 @@ themeConfig:
 src: ./00-intro.md
 ---
 
----
-src: ./01-promise-vs-reality.md
----
+
 
 ---
 src: ./02-god-component.md
@@ -47,4 +45,9 @@ src: ./07-over-engineering.md
 
 ---
 src: ./08-wrapup.md
+---
+
+
+---
+src: ./01-promise-vs-reality.md
 ---

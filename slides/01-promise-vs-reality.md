@@ -78,23 +78,3 @@ layout: statement
 # The new superpower:
 # Knowing how to help AI to build an maintain a good architecture
 
-
----
-
-# Menti: Who Are You?
-
-1. **Which framework do you use day-to-day?**
-   Angular · React · Something else *(multi-select)*
-
-2. **Which framework do you want us to go deeper on?**
-   Angular · React *(pick one)*
-
-3. **How happy are you with your app's architecture?**
-   1 — 5
-
-4. **What's your biggest architectural pain right now?** *(optional, free text)*
-
-<!--
-- TODO: replace with Menti QR code once questions are set up in Menti
-- Q4 feeds the wrap-up: scan responses during a break, pick 1–2 recurring themes to address before takeaways
--->

@@ -161,8 +161,6 @@ pre { font-size: 0.7rem !important; line-height: 1.5 !important; }
 
 # Where should this state live?
 
-Ask, in order:
-
 <v-clicks>
 
 1. **Local** — only one component cares

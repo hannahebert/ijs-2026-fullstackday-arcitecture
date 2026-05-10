@@ -4,32 +4,59 @@ layout: section
 
 # Part 1: The Promise vs. The Reality
 
-_Hannah & Florian_
-
+---
+layout: center
 ---
 
-# It Always Starts Clean...
+# Every legacy codebase started as a greenfield project.
 
-<v-clicks>
-
-- The greenfield project dream
-- "This time we'll do it right"
-- How architecture erodes over time
-
-</v-clicks>
+<!--
+- Normalize: not "those teams", everyone ends up here
+- Day 1 clean → 2 years, 30 devs, "temporary" hacks
+- Default trajectory, not rare outcome
+-->
 
 ---
+layout: center
+---
 
-# ...Then Reality Hits
+# It's not your fault.
 
-- Feature pressure, deadlines, team changes
-- The broken window effect: starts clean, then nobody cares
-- The gap between diagrams and production code
+<!--
+- Causes are structural: pressure, deadlines, turnover, frameworks shifting
+- Broken windows = system property, not character flaw
+- Warm tone, mean it — not handwave absolution
+-->
+
+---
+layout: center
+---
+
+# You can get out.
+
+<!--
+- Mess is reversible — not terminal
+- "Clean" = verb, ongoing discipline
+- Small steps compound, no rewrite needed
+- Bridge → rest of talk = the how → Menti
+-->
 
 ---
 
 # Menti: Who Are You?
 
-<!-- TODO: Menti QR code / link -->
-<!-- Poll: Who does Angular? Who does React? Who does both? -->
-<!-- Use results to calibrate depth per framework in the rest of the talk -->
+1. **Which framework do you use day-to-day?**
+   Angular · React · Something else *(multi-select)*
+
+2. **Which framework do you want us to go deeper on?**
+   Angular · React *(pick one)*
+
+3. **How happy are you with your app's architecture?**
+   1 — 5
+
+4. **What's your biggest architectural pain right now?** *(optional, free text)*
+
+<!--
+- TODO: replace with Menti QR code once questions are set up in Menti
+- Q4 feeds the wrap-up: scan responses during a break, pick 1–2 recurring themes to address before takeaways
+-->

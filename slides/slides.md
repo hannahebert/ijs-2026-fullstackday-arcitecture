@@ -20,34 +20,17 @@ src: ./00-intro.md
 
 
 ---
-src: ./02-god-component.md
+src: ./01-god-component.md
 ---
 
 ---
-src: ./03-state-management.md
+src: ./02-state-management.md
 ---
 
 ---
-src: ./04-effects-lifecycle.md
+src: ./03-error-handling_loading-state.md
 ---
 
 ---
-src: ./05-error-handling.md
----
-
----
-src: ./06-forms.md
----
-
----
-src: ./07-over-engineering.md
----
-
----
-src: ./08-wrapup.md
----
-
-
----
-src: ./01-promise-vs-reality.md
+src: ./04-wrapup.md
 ---

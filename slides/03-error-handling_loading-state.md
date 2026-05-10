@@ -2,19 +2,23 @@
 layout: section
 ---
 
-# Part 5: Error Handling & Loading States
+# Error Handling & Loading States
 
-The slides everyone forgets to design
+The states nobody designs until users see an endless loading spinner.
 
 ---
 
 # When the UI lies about what's happening
+
+<v-clicks>
 
 - A request fails and the spinner spins forever
 - The empty state and the loading state look identical
 - An error flashes, then stale data appears, then the error returns
 - A page-load failure shows the same modal as a save failure
 - The "retry" button reloads the whole page
+
+</v-clicks>
 
 ---
 
@@ -24,24 +28,28 @@ The slides everyone forgets to design
 
 - **loading** — we're waiting
 - **error** — it failed
-- **empty** — it succeeded with nothing
-- **success** — it succeeded with something
+- **success with empty response** — it succeeded with nothing
+- **success with data** — it succeeded with something
 
 </v-clicks>
 
-<v-click>
+<v-clicks>
 
-Three independent values (`isLoading`, `error`, `data`). Only one should be "active" at a time — but nothing in the type stops you from having all three at once.
+Three independent values (`isLoading`, `error`, `data`). Only one should be "active" at a time — but if they are independent nothing stops you from having all three at once.
 
-</v-click>
+</v-clicks>
 
 ---
 
 # Errors are part of the UI, not edge cases
 
+<v-clicks>
+
 - A `try/catch` that logs and moves on is a silent failure
 - "Something went wrong" tells the user nothing they didn't already see
 - A page-load error, a form-submit error, and a background-sync error are different problems — and need different recovery
+
+</v-clicks>
 
 ---
 layout: two-cols-header
@@ -158,3 +166,25 @@ pre { font-size: 0.7rem !important; line-height: 1.5 !important; }
 4. Make loading deliberate — skeleton, spinner, or nothing at all
 
 </v-clicks>
+
+---
+
+# Docs-as-Code: teach the AI your conventions
+
+<v-clicks>
+
+```markdown
+# docs/error-handling.md
+
+- Every async op has exactly one active state:
+  loading | error | success | empty
+- Never catch and ignore — recover or rethrow
+  with context
+- Error messages name the recovery action,
+  not just the problem
+- Page errors, form errors, and background
+  errors get separate handling
+```
+
+</v-clicks>
+

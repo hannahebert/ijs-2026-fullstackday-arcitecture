@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# Part 1: Promise vs. Reality
+# Wrap-Up & Takeaways
 
 ---
 layout: center
@@ -52,20 +52,6 @@ class: text-center
 layout: statement
 ---
 
-# But wait —
-# my AI writes and maintines the code.
-
-<div class="pt-8 text-gray-400">So why are we here?</div>
-
-<!--
-- Hands up: who's using Cursor / Copilot / Claude daily?
--->
-
-
----
-layout: statement
----
-
 Promise 2: I don't have to think about the arcitecture of my projct - AI will do that for me
 
 **Reality: You are still responsible**
@@ -78,3 +64,14 @@ layout: statement
 # The new superpower:
 # Knowing how to help AI to build an maintain a good architecture
 
+---
+layout: statement
+---
+
+# Thank You!
+
+Hannah Ebert & Florian Sowade
+
+<div class="pt-4 text-gray-400">
+  Questions?
+</div>

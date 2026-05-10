@@ -38,8 +38,67 @@ layout: center
 - Mess is reversible — not terminal
 - "Clean" = verb, ongoing discipline
 - Small steps compound, no rewrite needed
-- Bridge → rest of talk = the how → Menti
 -->
+
+---
+layout: center
+---
+
+# But wait —
+# my AI writes the code.
+
+<div class="pt-8 text-gray-400">So why are you here?</div>
+
+<!--
+- Hands up: who's using Cursor / Copilot / Claude daily?
+-->
+
+---
+layout: center
+---
+
+# AI doesn't decide architecture.
+# It amplifies yours.
+
+---
+
+# Same sins. New speed.
+
+<v-clicks>
+
+| Sin               | AI makes it worse           | Skill to keep         |
+| ----------------- | --------------------------- | --------------------- |
+| God Component     | Lands in the biggest file   | Define seams first    |
+| State             | Sees the snippet, not store | Explicit ownership    |
+| useEffect         | Mirrors patterns nearby     | Derive, don't sync    |
+| Errors            | Skips the edges             | Errors as contract    |
+| Over-engineering  | Enterprise for a TODO app   | Match complexity      |
+
+</v-clicks>
+
+<style>
+.slidev-layout table {
+  font-size: 1.4rem !important;
+  margin-top: 0.5rem !important;
+}
+.slidev-layout th,
+.slidev-layout td {
+  padding: 0.4rem 0.8rem !important;
+  line-height: 1.3 !important;
+}
+.slidev-layout h1 {
+  margin-bottom: 1rem !important;
+}
+</style>
+
+---
+layout: center
+---
+
+# The new superpower:
+# knowing when the output is wrong — and why.
+
+<div class="pt-6 text-gray-400">…which is the rest of this talk.</div>
 
 ---
 

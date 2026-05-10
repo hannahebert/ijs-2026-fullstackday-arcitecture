@@ -45,7 +45,7 @@ Hannah Ebert & Florian Sowade
 1. The Promise vs. The Reality
 2. The God Component & Component Architecture
 3. State Management Gone Wrong
-4. useEffect / Lifecycle Spaghetti
+4. Effects & Lifecycle Chaos
 5. Error Handling & Loading States
 6. Forms
 7. Over-Engineering

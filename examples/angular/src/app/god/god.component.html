@@ -1,0 +1,115 @@
+<article class="god-component">
+  <h1>Users</h1>
+
+  @if (loading) {
+    <p>Loading...</p>
+  } @else if (error) {
+    <p>Error: {{ error }}</p>
+  } @else {
+    <div class="toolbar">
+      <input
+        type="search"
+        placeholder="Search by name or email..."
+        [(ngModel)]="search"
+      />
+      <select [(ngModel)]="roleFilter">
+        <option value="all">All roles</option>
+        <option value="admin">Admin</option>
+        <option value="editor">Editor</option>
+        <option value="viewer">Viewer</option>
+      </select>
+      @if (selected.size > 0) {
+        <div class="bulk-actions">
+          <span>{{ selected.size }} selected</span>
+          <button (click)="deactivateSelected()">Deactivate selected</button>
+        </div>
+      }
+    </div>
+
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>
+            <input
+              type="checkbox"
+              [checked]="isAllSelected()"
+              (change)="toggleAll()"
+            />
+          </th>
+          <th>User</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Last login</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (u of filtered; track u.id) {
+          <tr>
+            <td>
+              <input
+                type="checkbox"
+                [checked]="isSelected(u.id)"
+                (change)="toggleSelected(u.id)"
+              />
+            </td>
+            <td>
+              <div class="user-cell">
+                <div class="avatar">{{ getInitials(u.name) }}</div>
+                <div>
+                  <div class="user-name">{{ u.name }}</div>
+                  <div class="user-email">{{ u.email }}</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <span class="role-badge" [ngStyle]="getRoleBadgeStyle(u.role)">
+                {{ u.role }}
+              </span>
+            </td>
+            <td>
+              <span [class]="getStatusClass(u)">{{ getStatusLabel(u) }}</span>
+            </td>
+            <td>{{ getLastLogin(u.lastLoginAt) }}</td>
+            <td class="row-actions">
+              <button (click)="openEdit(u)">Edit</button>
+              <button (click)="deactivateUser(u)">Deactivate</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+
+    @if (filtered.length === 0) {
+      <p class="empty">No users match your filters.</p>
+    }
+
+    @if (editing) {
+      <div class="drawer-backdrop" (click)="closeEdit()">
+        <div class="drawer" (click)="$event.stopPropagation()">
+          <h2>Edit user</h2>
+          <label>
+            Name
+            <input [(ngModel)]="editName" />
+          </label>
+          <label>
+            Email
+            <input [(ngModel)]="editEmail" />
+          </label>
+          <label>
+            Role
+            <select [(ngModel)]="editRole">
+              <option value="admin">Admin</option>
+              <option value="editor">Editor</option>
+              <option value="viewer">Viewer</option>
+            </select>
+          </label>
+          <div class="drawer-actions">
+            <button (click)="closeEdit()">Cancel</button>
+            <button (click)="saveEdit()">Save</button>
+          </div>
+        </div>
+      </div>
+    }
+  }
+</article>

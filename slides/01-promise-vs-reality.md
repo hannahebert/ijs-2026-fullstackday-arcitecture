@@ -5,7 +5,7 @@ layout: section
 # Part 1: The Promise vs. The Reality
 
 ---
-layout: center
+layout: statement
 ---
 
 # Every legacy codebase started as a greenfield project.
@@ -17,7 +17,7 @@ layout: center
 -->
 
 ---
-layout: center
+layout: statement
 ---
 
 # It's not your fault.
@@ -29,7 +29,7 @@ layout: center
 -->
 
 ---
-layout: center
+layout: statement
 ---
 
 # You can get out.
@@ -41,7 +41,7 @@ layout: center
 -->
 
 ---
-layout: center
+layout: statement
 ---
 
 # But wait —
@@ -54,7 +54,7 @@ layout: center
 -->
 
 ---
-layout: center
+layout: statement
 ---
 
 # AI doesn't decide architecture.
@@ -92,7 +92,7 @@ layout: center
 </style>
 
 ---
-layout: center
+layout: statement
 ---
 
 # The new superpower:

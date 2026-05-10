@@ -22,10 +22,10 @@ The slides everyone forgets to design
 
 <v-clicks>
 
-- _loading_ — we're waiting
-- _error_ — it failed
-- _empty_ — it succeeded with nothing
-- _success_ — it succeeded with something
+- **loading** — we're waiting
+- **error** — it failed
+- **empty** — it succeeded with nothing
+- **success** — it succeeded with something
 
 </v-clicks>
 

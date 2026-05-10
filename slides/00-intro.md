@@ -46,3 +46,12 @@ Hannah Ebert & Florian Sowade
 8. Wrap-Up & Takeaways
 
 </v-clicks>
+
+<style>
+ol {
+  line-height: 1.5 !important;
+}
+li {
+  margin-bottom: 0.3rem !important;
+}
+</style>

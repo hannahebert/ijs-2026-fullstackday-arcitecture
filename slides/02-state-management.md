@@ -90,45 +90,6 @@ Storing what you could compute creates a second source of truth.
 
 ---
 
-# Server state isn't client state
-
-<p class="card-subtitle">Data from an API has different needs than UI state.</p>
-
-<div class="card-grid">
-  <div class="card">
-    <div class="card-icon">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>
-      </svg>
-    </div>
-    <div class="card-title">Lifecycle is complex</div>
-    <div class="card-desc">Caching, refetching, invalidation, retries — all built-in concerns</div>
-  </div>
-  <div class="card">
-    <div class="card-icon">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-      </svg>
-    </div>
-    <div class="card-title">Always potentially stale</div>
-    <div class="card-desc">Stale-while-revalidate and optimistic updates are the norm, not the exception</div>
-  </div>
-  <div class="card">
-    <div class="card-icon">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/>
-      </svg>
-    </div>
-    <div class="card-title">The server moves first</div>
-    <div class="card-desc">It changes underneath you — your local copy is always a snapshot</div>
-  </div>
-</div>
-
-> Use a server-state library and keep your client state for what's actually client state.
-
-
----
-
 # Where should state live?
 
 <div class="card-grid-2">
@@ -214,3 +175,44 @@ layout: statement
 A request is never just "loading" or "done."
 
 </v-click>
+
+
+---
+
+# Server state isn't client state
+
+<p class="card-subtitle">Data from an API has different needs than UI state.</p>
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>
+      </svg>
+    </div>
+    <div class="card-title">Lifecycle is complex</div>
+    <div class="card-desc">Caching, refetching, invalidation, retries — all built-in concerns</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+    </div>
+    <div class="card-title">Always potentially stale</div>
+    <div class="card-desc">Stale-while-revalidate and optimistic updates are the norm, not the exception</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/>
+      </svg>
+    </div>
+    <div class="card-title">The server moves first</div>
+    <div class="card-desc">It changes underneath you — your local copy is always a snapshot</div>
+  </div>
+</div>
+
+> Use a server-state library and keep your client state for what's actually client state.
+
+

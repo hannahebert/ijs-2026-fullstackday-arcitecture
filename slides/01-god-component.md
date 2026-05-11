@@ -183,23 +183,58 @@ Why we shouldn't dump everything into one compoment.
 
 # Prompts that work well
 
-<v-clicks class="mt-8">
-```
-"Identify the distinct concerns in this component.
-Don't change any code yet — just list them."
-```
-<br>
-```
-"Extract only the filter state and logic into
-a custom hook. Keep the component's API identical."
-```
-<br>
-```
-"What would the ideal folder structure look like
-after a full refactor? Show me the file tree."
-```
+<div class="card-stack">
+  <div v-click class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/>
+      </svg>
+    </div>
+    <div>
+      <div class="card-title">Explore first, don't touch</div>
+      <div class="prompt-text">"Identify the distinct concerns in this component. Don't change any code yet — just list them."</div>
+    </div>
+  </div>
+  <div v-click class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/>
+      </svg>
+    </div>
+    <div>
+      <div class="card-title">One extraction at a time</div>
+      <div class="prompt-text">"Extract only the filter state and logic into a custom hook. Keep the component's API identical."</div>
+    </div>
+  </div>
+  <div v-click class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/>
+      </svg>
+    </div>
+    <div>
+      <div class="card-title">Plan the structure first</div>
+      <div class="prompt-text">"What would the ideal folder structure look like after a full refactor? Show me the file tree."</div>
+    </div>
+  </div>
+</div>
 
-</v-clicks>
+<style>
+.card-stack { display: flex; flex-direction: column; gap: 0.75rem; }
+.card-stack .card { flex-direction: row; align-items: flex-start; gap: 1rem; }
+.card-stack .card-icon { margin-bottom: 0; flex-shrink: 0; }
+.prompt-text {
+  font-family: monospace;
+  font-size: 0.8rem !important;
+  color: #334155;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0.65rem 0.8rem;
+  line-height: 1.6 !important;
+  margin-top: 0.4rem;
+}
+</style>
 
 ---
 

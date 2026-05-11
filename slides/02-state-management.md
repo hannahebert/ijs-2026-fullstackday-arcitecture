@@ -107,6 +107,24 @@ flowchart LR
 ```
 
 ---
+
+# Docs-as-Code: teach the AI your state conventions
+
+<v-clicks>
+
+```markdown
+# docs/state-conventions.md
+
+- Server data (API responses) → React Query / SWR
+  Never duplicate into useState
+- UI state → local unless two+ components need it
+- Derive on read — no useEffect for sync
+- Global state is the last resort, not the default
+```
+
+</v-clicks>
+
+---
 layout: statement
 ---
 

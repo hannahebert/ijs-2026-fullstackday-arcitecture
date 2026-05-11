@@ -10,193 +10,96 @@ Why we shouldn't dump everything into one compoment.
 
 # Problems a God Component creates
 
-<div class="problems-grid">
-  <div class="problem-card">
-    <div class="problem-icon">
+<div class="card-grid">
+  <div class="card">
+    <div class="card-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/>
       </svg>
     </div>
-    <div class="problem-title">Untestability</div>
-    <div class="problem-desc">You can't just unit-test one concern</div>
+    <div class="card-title">Untestability</div>
+    <div class="card-desc">You can't just unit-test one concern</div>
   </div>
-  <div class="problem-card">
-    <div class="problem-icon">
+  <div class="card">
+    <div class="card-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/>
       </svg>
     </div>
-    <div class="problem-title">Merge Conflicts</div>
-    <div class="problem-desc">Every feature touches the same file; PRs block each other</div>
+    <div class="card-title">Merge Conflicts</div>
+    <div class="card-desc">Every feature touches the same file; PRs block each other</div>
   </div>
-  <div class="problem-card">
-    <div class="problem-icon">
+  <div class="card">
+    <div class="card-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M9 17H7A5 5 0 0 1 7 7"/><path d="M15 7h2a5 5 0 0 1 4 8"/><line x1="8" x2="12" y1="12" y2="12"/><line x1="2" x2="22" y1="2" y2="22"/>
       </svg>
     </div>
-    <div class="problem-title">Hidden Coupling</div>
-    <div class="problem-desc">A filter change accidentally breaks the edit form</div>
+    <div class="card-title">Hidden Coupling</div>
+    <div class="card-desc">A filter change accidentally breaks the edit form</div>
   </div>
-  <div class="problem-card">
-    <div class="problem-icon">
+  <div class="card">
+    <div class="card-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/>
       </svg>
     </div>
-    <div class="problem-title">Slow Builds & Re-renders</div>
-    <div class="problem-desc">One state change triggers the whole tree</div>
+    <div class="card-title">Slow Builds & Re-renders</div>
+    <div class="card-desc">One state change triggers the whole tree</div>
   </div>
-  <div class="problem-card">
-    <div class="problem-icon">
+  <div class="card">
+    <div class="card-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/>
       </svg>
     </div>
-    <div class="problem-title">Onboarding Tax</div>
-    <div class="problem-desc">New team members need to understand 500 lines before touching anything</div>
+    <div class="card-title">Onboarding Tax</div>
+    <div class="card-desc">New team members need to understand 500 lines before touching anything</div>
   </div>
-  <div class="problem-card">
-    <div class="problem-icon">
+  <div class="card">
+    <div class="card-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
       </svg>
     </div>
-    <div class="problem-title">Impossible Reuse</div>
-    <div class="problem-desc">The fetch logic, filter logic, and UI are fused together forever</div>
+    <div class="card-title">Impossible Reuse</div>
+    <div class="card-desc">The fetch logic, filter logic, and UI are fused together forever</div>
   </div>
 </div>
-
-<style>
-h1 {
-  border-left: 5px solid #2D6CC7;
-  padding-left: 1rem !important;
-  margin-bottom: 1rem !important;
-}
-
-.problems-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.problem-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1.2rem 1.4rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-}
-
-.problem-icon {
-  width: 36px;
-  height: 36px;
-  background: #dbeafe;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #2D6CC7;
-  margin-bottom: 0.65rem;
-}
-
-.problem-title {
-  font-weight: 700;
-  font-size: 1rem !important;
-  color: #1e293b;
-  margin-bottom: 0.3rem;
-  line-height: 1.3 !important;
-}
-
-.problem-desc {
-  font-size: 0.85rem !important;
-  color: #64748b;
-  line-height: 1.5 !important;
-}
-</style>
 
 ---
 
 # When to leave it alone
 
-<div class="leave-grid">
-  <div class="leave-card">
-    <div class="leave-icon">
+<div class="card-grid">
+  <div class="card">
+    <div class="card-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/>
       </svg>
     </div>
-    <div class="leave-title">Size isn't the only indicator</div>
-    <div class="leave-desc">Long isn't always bad if it's coherent</div>
+    <div class="card-title">Size isn't the only indicator</div>
+    <div class="card-desc">Long isn't always bad if it's coherent</div>
   </div>
-  <div class="leave-card">
-    <div class="leave-icon">
+  <div class="card">
+    <div class="card-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>
       </svg>
     </div>
-    <div class="leave-title">Watch the props</div>
-    <div class="leave-desc">A child with 10 props is a worse smell than a large component</div>
+    <div class="card-title">Watch the props</div>
+    <div class="card-desc">A child with 10 props is a worse smell than a large component</div>
   </div>
-  <div class="leave-card">
-    <div class="leave-icon">
+  <div class="card">
+    <div class="card-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/>
       </svg>
     </div>
-    <div class="leave-title">Skip the hypothetical</div>
-    <div class="leave-desc">Don't refactor for use cases that might never exist</div>
+    <div class="card-title">Skip the hypothetical</div>
+    <div class="card-desc">Don't refactor for use cases that might never exist</div>
   </div>
 </div>
-
-<style>
-h1 {
-  border-left: 5px solid #2D6CC7;
-  padding-left: 1rem !important;
-  margin-bottom: 1.5rem !important;
-}
-
-.leave-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: 0.5rem;
-}
-
-.leave-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1.5rem 1.6rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-}
-
-.leave-icon {
-  width: 36px;
-  height: 36px;
-  background: #dbeafe;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #2D6CC7;
-  margin-bottom: 0.8rem;
-}
-
-.leave-title {
-  font-weight: 700;
-  font-size: 1.05rem !important;
-  color: #1e293b;
-  margin-bottom: 0.4rem;
-  line-height: 1.3 !important;
-}
-
-.leave-desc {
-  font-size: 0.9rem !important;
-  color: #64748b;
-  line-height: 1.5 !important;
-}
-</style>
 
 ---
 

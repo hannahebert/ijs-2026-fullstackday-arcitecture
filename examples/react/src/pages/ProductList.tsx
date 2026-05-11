@@ -10,7 +10,7 @@ import { addToCart } from "../cart";
 import { getAssetUrl } from "../assetUrl";
 import "./ProductList.css";
 
-const PAGE_SIZE = 8;
+const PAGE_SIZE = 9;
 
 export const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([]);

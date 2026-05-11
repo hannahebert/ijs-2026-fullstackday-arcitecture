@@ -105,3 +105,15 @@ flowchart LR
     F -->|Subtree| G[Lifted\nmove to parent component]
     F -->|Whole app| H[Global\nContext / Zustand / NgRx]
 ```
+
+---
+layout: statement
+---
+
+# But how do we handle Server State?
+
+<v-click>
+
+A request is never just "loading" or "done."
+
+</v-click>

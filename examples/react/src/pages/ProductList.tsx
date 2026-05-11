@@ -13,21 +13,29 @@ import "./ProductList.css";
 const PAGE_SIZE = 9;
 
 export const ProductList = () => {
+  // TODO: Extract fetching products into hook
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // TODO: Extract fetching categories into hook
   const [categories, setCategories] = useState<Category[]>([]);
+
   const [selectedCategoryId, setSelectedCategoryId] = useState<
     number | undefined
   >();
+
+  // TODO: Extract default value
+  // TODO: Extract Filter State into hook
   const [maxPrice, setMaxPrice] = useState(200);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState<"name" | "price">("name");
+
   const [order, setOrder] = useState<"asc" | "desc">("asc");
   const [page, setPage] = useState(1);
   const [justAddedIds, setJustAddedIds] = useState<Set<number>>(new Set());
 
+  // Handle Add stays here after ProductCard is extracted
   const handleAdd = (productId: number) => {
     addToCart(productId);
     setJustAddedIds((prev) => new Set(prev).add(productId));
@@ -70,6 +78,7 @@ export const ProductList = () => {
 
   return (
     <div className="product-list">
+      {/* TODO: Extract Filter Aside */}
       <aside className="filters">
         <h2>Categories</h2>
         <ul className="category-list">
@@ -122,6 +131,7 @@ export const ProductList = () => {
 
       <section className="results">
         <div className="toolbar">
+          {/* TODO: Extract Search Input */}
           <input
             type="text"
             placeholder="Search products..."
@@ -155,6 +165,7 @@ export const ProductList = () => {
 
         <div className="product-grid">
           {products.map((p) => (
+            // TODO: Extract Product Card
             <article key={p.id} className="product-card">
               <Link to={`/products/${p.id}`}>
                 <img

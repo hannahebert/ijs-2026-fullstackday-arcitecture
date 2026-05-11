@@ -14,6 +14,9 @@ const PAGE_SIZE = 8;
 
 export const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState<
     number | undefined
@@ -23,8 +26,6 @@ export const ProductList = () => {
   const [sort, setSort] = useState<"name" | "price">("name");
   const [order, setOrder] = useState<"asc" | "desc">("asc");
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [justAddedIds, setJustAddedIds] = useState<Set<number>>(new Set());
 
   const handleAdd = (productId: number) => {

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
 import {
   getProducts,
   getCategories,
@@ -7,8 +6,8 @@ import {
   type Category,
 } from "../api";
 import { addToCart } from "../cart";
-import { getAssetUrl } from "../assetUrl";
 import "./ProductList.css";
+import { ProductCard } from "../product-list/ProductCard.tsx";
 
 const PAGE_SIZE = 9;
 
@@ -36,13 +35,13 @@ export const ProductList = () => {
   const [justAddedIds, setJustAddedIds] = useState<Set<number>>(new Set());
 
   // Handle Add stays here after ProductCard is extracted
-  const handleAdd = (productId: number) => {
-    addToCart(productId);
-    setJustAddedIds((prev) => new Set(prev).add(productId));
+  const handleAdd = (product: Product) => {
+    addToCart(product.id);
+    setJustAddedIds((prev) => new Set(prev).add(product.id));
     setTimeout(() => {
       setJustAddedIds((prev) => {
         const next = new Set(prev);
-        next.delete(productId);
+        next.delete(product.id);
         return next;
       });
     }, 1500);
@@ -165,32 +164,12 @@ export const ProductList = () => {
 
         <div className="product-grid">
           {products.map((p) => (
-            // TODO: Extract Product Card
-            <article key={p.id} className="product-card">
-              <Link to={`/products/${p.id}`}>
-                <img
-                  src={getAssetUrl("product", p.imageSeed, "md")}
-                  alt={p.name}
-                />
-              </Link>
-              <div className="product-card-body">
-                <Link to={`/products/${p.id}`}>
-                  <h3>{p.name}</h3>
-                </Link>
-                <p className="price">${p.price.toFixed(2)}</p>
-                <button
-                  onClick={() => handleAdd(p.id)}
-                  disabled={p.stock === 0}
-                  className="add-button"
-                >
-                  {p.stock === 0
-                    ? "Out of stock"
-                    : justAddedIds.has(p.id)
-                      ? "Added to cart"
-                      : "Add to cart"}
-                </button>
-              </div>
-            </article>
+            <ProductCard
+              key={p.id}
+              product={p}
+              onProductAdd={handleAdd}
+              isProductAdded={justAddedIds.has(p.id)}
+            />
           ))}
         </div>
 

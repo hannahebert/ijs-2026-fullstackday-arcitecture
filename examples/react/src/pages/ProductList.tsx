@@ -11,47 +11,17 @@ import { ProductCard } from "../product-list/ProductCard.tsx";
 
 const PAGE_SIZE = 9;
 
-export const ProductList = () => {
-  // TODO: Extract fetching products into hook
+const useProductData = (
+  search: string,
+  selectedCategoryId: number | undefined,
+  maxPrice: number | undefined,
+  sort: "name" | "price",
+  order: "asc" | "desc",
+  page: number,
+) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  // TODO: Extract fetching categories into hook
-  const [categories, setCategories] = useState<Category[]>([]);
-
-  const [selectedCategoryId, setSelectedCategoryId] = useState<
-    number | undefined
-  >();
-
-  // TODO: Extract default value
-  // TODO: Extract Filter State into hook
-  const [maxPrice, setMaxPrice] = useState(200);
-  const [search, setSearch] = useState("");
-  const [sort, setSort] = useState<"name" | "price">("name");
-
-  const [order, setOrder] = useState<"asc" | "desc">("asc");
-  const [page, setPage] = useState(1);
-  const [justAddedIds, setJustAddedIds] = useState<Set<number>>(new Set());
-
-  // Handle Add stays here after ProductCard is extracted
-  const handleAdd = (product: Product) => {
-    addToCart(product.id);
-    setJustAddedIds((prev) => new Set(prev).add(product.id));
-    setTimeout(() => {
-      setJustAddedIds((prev) => {
-        const next = new Set(prev);
-        next.delete(product.id);
-        return next;
-      });
-    }, 1500);
-  };
-
-  useEffect(() => {
-    getCategories()
-      .then(setCategories)
-      .catch(() => {});
-  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -74,6 +44,59 @@ export const ProductList = () => {
         setLoading(false);
       });
   }, [search, selectedCategoryId, maxPrice, sort, order, page]);
+
+  return {
+    products,
+    loading,
+    error,
+  };
+};
+
+export const ProductList = () => {
+  // TODO: Extract fetching categories into hook
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  const [selectedCategoryId, setSelectedCategoryId] = useState<
+    number | undefined
+  >();
+
+  // TODO: Extract default value
+  // TODO: Extract Filter State into hook
+  const [maxPrice, setMaxPrice] = useState(200);
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState<"name" | "price">("name");
+
+  const [order, setOrder] = useState<"asc" | "desc">("asc");
+  const [page, setPage] = useState(1);
+  const [justAddedIds, setJustAddedIds] = useState<Set<number>>(new Set());
+
+  const { products, error, loading } = useProductData(
+    search,
+    selectedCategoryId,
+    maxPrice,
+    sort,
+    order,
+    page,
+  );
+
+  // Handle Add stays here after ProductCard is extracted
+  const handleAdd = (product: Product) => {
+    addToCart(product.id);
+    setJustAddedIds((prev) => new Set(prev).add(product.id));
+    setTimeout(() => {
+      setJustAddedIds((prev) => {
+        const next = new Set(prev);
+        next.delete(product.id);
+        return next;
+      });
+    }, 1500);
+  };
+
+  useEffect(() => {
+    getCategories()
+      .then(setCategories)
+      .catch(() => {});
+  }, []);
 
   return (
     <div className="product-list">

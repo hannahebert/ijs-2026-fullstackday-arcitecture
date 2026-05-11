@@ -6,37 +6,35 @@ layout: section
 
 ---
 layout: center
-class: text-center
 ---
 
-# Promise 1
+# Three lessons from today
 
-**"The next project will be perfect —**  
-**if I just make the perfect decisions upfront!"**
+<v-clicks>
 
-<v-click>
-<div class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded border border-red-400 bg-red-50 text-red-700 text-sm font-large">
-  <span class="w-4 h-4 rounded-full bg-red-500 inline-block" />
-  Reality: It won't.
-</div>
-</v-click>
+- **God Components** → *Clarity*: one component, one job
+- **State Management** → *One source of truth*: know where state lives
+- **Error Handling** → *Intentionality*: design for every state, not just the happy path
+
+</v-clicks>
 
 ---
 layout: statement
 ---
 
-# It's not your fault.
+# What do they have in common?
 
-<!--
-- Causes are structural: pressure, deadlines, turnover, frameworks shifting
-- Broken windows = system property, not character flaw
--->
+<v-click>
+
+All three make **decisions visible and maintainable** —  
+for your team, your future self, and your AI assistant.
+
+</v-click>
 
 ---
 layout: center
 class: text-center
 ---
-
 
 > Good architecture is not a decision you make once —  
 > it's a **discipline you practice continuously**.
@@ -52,17 +50,8 @@ class: text-center
 layout: statement
 ---
 
-Promise 2: I don't have to think about the arcitecture of my projct - AI will do that for me
-
-**Reality: You are still responsible**
-
-
----
-layout: statement
----
-
 # The new superpower:
-# Knowing how to help AI to build an maintain a good architecture
+# Knowing how to help AI build and maintain a good architecture
 
 ---
 layout: statement

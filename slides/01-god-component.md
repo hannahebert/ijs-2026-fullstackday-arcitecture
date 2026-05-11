@@ -119,9 +119,84 @@ h1 {
 
 # When to leave it alone
 
-- Long isn't bad if it's coherent
-- A child with 10 props is a worse smell than a large component
-- Don't refactor for use cases that might never exist
+<div class="leave-grid">
+  <div class="leave-card">
+    <div class="leave-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/>
+      </svg>
+    </div>
+    <div class="leave-title">Size isn't the only indicator</div>
+    <div class="leave-desc">Long isn't always bad if it's coherent</div>
+  </div>
+  <div class="leave-card">
+    <div class="leave-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>
+      </svg>
+    </div>
+    <div class="leave-title">Watch the props</div>
+    <div class="leave-desc">A child with 10 props is a worse smell than a large component</div>
+  </div>
+  <div class="leave-card">
+    <div class="leave-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/>
+      </svg>
+    </div>
+    <div class="leave-title">Skip the hypothetical</div>
+    <div class="leave-desc">Don't refactor for use cases that might never exist</div>
+  </div>
+</div>
+
+<style>
+h1 {
+  border-left: 5px solid #2D6CC7;
+  padding-left: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.leave-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.leave-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem 1.6rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.leave-icon {
+  width: 36px;
+  height: 36px;
+  background: #dbeafe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2D6CC7;
+  margin-bottom: 0.8rem;
+}
+
+.leave-title {
+  font-weight: 700;
+  font-size: 1.05rem !important;
+  color: #1e293b;
+  margin-bottom: 0.4rem;
+  line-height: 1.3 !important;
+}
+
+.leave-desc {
+  font-size: 0.9rem !important;
+  color: #64748b;
+  line-height: 1.5 !important;
+}
+</style>
 
 ---
 

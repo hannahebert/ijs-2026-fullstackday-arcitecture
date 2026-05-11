@@ -31,6 +31,8 @@ export const getProducts = async (
   params: ProductListParams = {},
 ): Promise<Product[]> => {
   const url = new URL(`${BASE}/products`);
+  //if (Math.random() > 0.8) url.searchParams.set('_error', '500');
+  //url.searchParams.set('_delay', `${Math.random() * 2000}`);
   if (params.search) url.searchParams.set("q", params.search);
   if (params.categoryId)
     url.searchParams.set("categoryId", String(params.categoryId));
@@ -69,7 +71,10 @@ export const getRelatedProducts = async (
 };
 
 export const getCategories = async (): Promise<Category[]> => {
-  const res = await fetch(`${BASE}/categories`);
+  const url = new URL(`${BASE}/categories`);
+  //if (Math.random() > 0.8) url.searchParams.set('_error', '500');
+  //url.searchParams.set('_delay', `${Math.random() * 2000}`);
+  const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to fetch categories (${res.status})`);
   return res.json();
 };

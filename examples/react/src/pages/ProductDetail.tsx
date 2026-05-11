@@ -7,7 +7,7 @@ import {
   type Product,
   type Category,
 } from "../api";
-import { addToCart } from "../cart";
+import { useCart } from "../cart-context";
 import { getAssetUrl } from "../assetUrl";
 import "./ProductDetail.css";
 
@@ -22,6 +22,7 @@ export const ProductDetail = () => {
   const [error, setError] = useState<string | null>(null);
   const [qty, setQty] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     if (!id) return;

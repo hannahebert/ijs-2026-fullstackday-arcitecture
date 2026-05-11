@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { Link } from "react-router";
-import { clearCart } from "../cart";
+import { useCart } from "../cart-context";
 import "./Thanks.css";
 
 export const Thanks = () => {
+  const { clearCart } = useCart();
+
   useEffect(() => {
     clearCart();
-  }, []);
+  }, [clearCart]);
 
   return (
     <div className="thanks-page">

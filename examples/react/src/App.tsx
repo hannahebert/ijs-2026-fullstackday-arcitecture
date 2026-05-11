@@ -1,18 +1,13 @@
 import { Routes, Route, Outlet, Link } from "react-router";
-import { useEffect, useState } from "react";
 import { ProductList } from "./pages/ProductList";
 import { ProductDetail } from "./pages/ProductDetail";
 import { Cart } from "./pages/Cart";
 import { Thanks } from "./pages/Thanks";
-import { getCart } from "./cart";
+import { CartProvider, useCart } from "./cart-context";
 
 const CartBadge = () => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const total = getCart().reduce((sum, item) => sum + item.quantity, 0);
-    setCount(total);
-  }, []);
+  const { items } = useCart();
+  const count = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <Link to="/cart" className="cart-badge">
@@ -37,12 +32,14 @@ const Layout = () => (
 );
 
 export const App = () => (
-  <Routes>
-    <Route element={<Layout />}>
-      <Route index element={<ProductList />} />
-      <Route path="products/:id" element={<ProductDetail />} />
-      <Route path="cart" element={<Cart />} />
-      <Route path="thanks" element={<Thanks />} />
-    </Route>
-  </Routes>
+  <CartProvider>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<ProductList />} />
+        <Route path="products/:id" element={<ProductDetail />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="thanks" element={<Thanks />} />
+      </Route>
+    </Routes>
+  </CartProvider>
 );

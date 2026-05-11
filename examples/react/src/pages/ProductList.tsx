@@ -5,7 +5,6 @@ import {
   type Product,
   type Category,
 } from "../api";
-import { addToCart } from "../cart";
 import "./ProductList.css";
 import { ProductCard } from "../product-list/ProductCard.tsx";
 
@@ -68,7 +67,6 @@ export const ProductList = () => {
 
   const [order, setOrder] = useState<"asc" | "desc">("asc");
   const [page, setPage] = useState(1);
-  const [justAddedIds, setJustAddedIds] = useState<Set<number>>(new Set());
 
   const { products, error, loading } = useProductData(
     search,
@@ -78,19 +76,6 @@ export const ProductList = () => {
     order,
     page,
   );
-
-  // Handle Add stays here after ProductCard is extracted
-  const handleAdd = (product: Product) => {
-    addToCart(product.id);
-    setJustAddedIds((prev) => new Set(prev).add(product.id));
-    setTimeout(() => {
-      setJustAddedIds((prev) => {
-        const next = new Set(prev);
-        next.delete(product.id);
-        return next;
-      });
-    }, 1500);
-  };
 
   useEffect(() => {
     getCategories()
@@ -187,12 +172,7 @@ export const ProductList = () => {
 
         <div className="product-grid">
           {products.map((p) => (
-            <ProductCard
-              key={p.id}
-              product={p}
-              onProductAdd={handleAdd}
-              isProductAdded={justAddedIds.has(p.id)}
-            />
+            <ProductCard key={p.id} product={p} />
           ))}
         </div>
 

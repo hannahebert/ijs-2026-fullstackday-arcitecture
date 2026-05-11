@@ -1,40 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { getCart, setQuantity, type CartItem } from "../cart";
+import { useCart } from "../cart-context";
 import { getProduct, type Product } from "../api";
 import { getAssetUrl } from "../assetUrl";
 import "./Cart.css";
 
-type CartLine = CartItem & { product: Product };
+type CartLine = { productId: number; quantity: number; product: Product };
 
-const useCartLines = (): [CartLine[], () => void] => {
-  const [items, setItems] = useState<CartLine[]>([]);
+export const Cart = () => {
+  const { items, setQuantity } = useCart();
+  const [lines, setLines] = useState<CartLine[]>([]);
+  const navigate = useNavigate();
 
-  const reload = () => {
-    const cart = getCart();
+  useEffect(() => {
     Promise.all(
-      cart.map(async (item) => ({
+      items.map(async (item) => ({
         ...item,
         product: await getProduct(item.productId),
       })),
-    ).then(setItems);
-  };
-
-  useEffect(() => {
-    reload();
-  }, []);
-
-  return [items, reload];
-};
-
-export const Cart = () => {
-  const [items, reload] = useCartLines();
-  const navigate = useNavigate();
-
-  const handleQty = (productId: number, qty: number) => {
-    setQuantity(productId, qty);
-    reload();
-  };
+    ).then(setLines);
+  }, [items]);
 
   if (items.length === 0) {
     return (
@@ -45,7 +30,7 @@ export const Cart = () => {
     );
   }
 
-  const total = items.reduce(
+  const total = lines.reduce(
     (sum, line) => sum + line.product.price * line.quantity,
     0,
   );
@@ -54,7 +39,7 @@ export const Cart = () => {
     <div className="cart-page">
       <h1>Your cart</h1>
       <ul className="cart-lines">
-        {items.map((line) => (
+        {lines.map((line) => (
           <li key={line.productId} className="cart-line">
             <img
               src={getAssetUrl("product", line.product.imageSeed, "sm")}
@@ -68,13 +53,13 @@ export const Cart = () => {
             </div>
             <div className="qty-stepper">
               <button
-                onClick={() => handleQty(line.productId, line.quantity - 1)}
+                onClick={() => setQuantity(line.productId, line.quantity - 1)}
               >
                 -
               </button>
               <span>{line.quantity}</span>
               <button
-                onClick={() => handleQty(line.productId, line.quantity + 1)}
+                onClick={() => setQuantity(line.productId, line.quantity + 1)}
               >
                 +
               </button>

@@ -1,18 +1,23 @@
+import { useState } from "react";
 import type { Product } from "../api.ts";
 import { Link } from "react-router";
 import { getAssetUrl } from "../assetUrl.ts";
+import { useCart } from "../cart-context.tsx";
 
 interface Props {
   product: Product;
-  onProductAdd: (product: Product) => void;
-  isProductAdded: boolean;
 }
 
-export const ProductCard: React.FC<Props> = ({
-  product,
-  onProductAdd,
-  isProductAdded,
-}) => {
+export const ProductCard: React.FC<Props> = ({ product }) => {
+  const { addToCart } = useCart();
+  const [justAdded, setJustAdded] = useState(false);
+
+  const handleAdd = () => {
+    addToCart(product.id);
+    setJustAdded(true);
+    setTimeout(() => setJustAdded(false), 1500);
+  };
+
   return (
     <article className="product-card">
       <Link to={`/products/${product.id}`}>
@@ -27,13 +32,13 @@ export const ProductCard: React.FC<Props> = ({
         </Link>
         <p className="price">${product.price.toFixed(2)}</p>
         <button
-          onClick={() => onProductAdd(product)}
+          onClick={handleAdd}
           disabled={product.stock === 0}
           className="add-button"
         >
           {product.stock === 0
             ? "Out of stock"
-            : isProductAdded
+            : justAdded
               ? "Added to cart"
               : "Add to cart"}
         </button>

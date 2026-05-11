@@ -147,6 +147,20 @@ flowchart LR
 ```
 
 ---
+layout: center
+class: text-center
+---
+
+<div class="qa-card" style="max-width: 320px; margin: 0 auto;">
+  <div class="qa-icon">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="5 3 19 12 5 21 5 3"/>
+    </svg>
+  </div>
+  <div class="qa-label">Demo</div>
+</div>
+
+---
 
 # Docs-as-Code: teach the AI your state conventions
 

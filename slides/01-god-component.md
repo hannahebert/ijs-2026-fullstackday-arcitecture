@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# The God Component & Component Architecture
+# The God Component
 
 Why we shouldn't dump everything into one compoment.
 
@@ -135,13 +135,35 @@ Why we shouldn't dump everything into one compoment.
 
 # "Why bother — I have AI for that now."
 
-<v-clicks>
-
-- **Domain knowledge doesn't transfer automatically** — AI needs context via prompt, docs, or architecture notes
-- **If you can't explain the split, Claude can't find it either** — garbage in, garbage out
-- **A God Component refactored by AI without a clear seam is still a God Component** — just spread across more files
-
-</v-clicks>
+<div class="card-grid">
+  <div class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>
+      </svg>
+    </div>
+    <div class="card-title">Domain knowledge is not inherently available to the AI</div>
+    <div class="card-desc">AI needs context via prompt, docs, or architecture notes</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/>
+      </svg>
+    </div>
+    <div class="card-title">Garbage in, garbage out</div>
+    <div class="card-desc">If you can't explain the split, Claude can't find it either</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>
+      </svg>
+    </div>
+    <div class="card-title">Refactoring isn't always progress</div>
+    <div class="card-desc">A God Component refactored by AI without a clear seam is still a God Component — just spread across more files</div>
+  </div>
+</div>
 
 ---
 
@@ -183,11 +205,41 @@ after a full refactor? Show me the file tree."
 
 # Preventing God Components long-term
 
-<v-clicks>
-
-- **Add a linting rule** — `max-lines` in ESLint; it fails the pipeline, not just a PR comment (Pros and Cons)
-- **Add/ Expand the rules for code reviews (i.e. in your skill.md)** 
-- **Architect the folder structure first** — i.e. a clear `components/`, `hooks/`, `services/` split 
-- **Write the test before the code** — if you can't unit-test it in isolation, the boundary is wrong
-
-</v-clicks>
+<div class="card-grid-2">
+  <div class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    </div>
+    <div class="card-title">Add a linting rule</div>
+    <div class="card-desc"><code>max-lines</code> in ESLint — fails the pipeline, not just a PR comment <em>(opinions divided)</em></div>
+  </div>
+  <div class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/>
+      </svg>
+    </div>
+    <div class="card-title">Expand your code review rules</div>
+    <div class="card-desc">Add boundary expectations to your skill.md or review checklist</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13 10h7a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"/><path d="M13 21h7a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 15h-2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1Z"/><path d="M3 3v2c0 1.1.9 2 2 2h3"/><path d="M3 3v13c0 1.1.9 2 2 2h3"/>
+      </svg>
+    </div>
+    <div class="card-title">Architect the folder structure first</div>
+    <div class="card-desc">A clear <code>components/</code>, <code>hooks/</code>, <code>services/</code> split might prevent the problem</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/>
+      </svg>
+    </div>
+    <div class="card-title">Write the test before the code</div>
+    <div class="card-desc">If you can't unit-test it in isolation, the boundary is wrong</div>
+  </div>
+</div>

@@ -138,6 +138,14 @@ strong {
   line-height: 1.5 !important;
 }
 
+/* Two-column card grid variant */
+.card-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 .card-subtitle {
   font-size: 1.1rem !important;
   color: #64748b;

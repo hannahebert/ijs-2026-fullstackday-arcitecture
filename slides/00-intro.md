@@ -85,3 +85,33 @@ Hannah Ebert & Florian Sowade
 <style>
 .slidev-layout { place-content: start; text-align: left; }
 </style>
+
+---
+layout: center
+---
+
+<div class="qa-grid">
+  <div class="qa-card">
+    <div class="qa-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+    </div>
+    <div class="qa-label">Questions?</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+    </div>
+    <div class="qa-label">Demo</div>
+  </div>
+</div>
+
+<style>
+.qa-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 560px; }
+.qa-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 2.5rem 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.qa-icon { width: 60px; height: 60px; background: #dbeafe; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #2D6CC7; }
+.qa-label { font-size: 1.6rem !important; font-weight: 700; color: #1e293b; line-height: 1.2 !important; }
+</style>
